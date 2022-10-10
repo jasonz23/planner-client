@@ -19,6 +19,7 @@ const NavBar = () => {
     link1: "Home",
     link2: "Tasks",
     link3: "Calendar",
+    link4: "Settings",
   };
 
   return (
@@ -50,7 +51,7 @@ const NavBar = () => {
               </ListItemIcon>
             </ListItem>
             <Divider />
-            <ListItem button key={content["link3"]}>
+            <ListItem button key={content["link4"]}>
               <ListItemIcon className="icon-box">
                 <SettingsIcon style={{ fontSize: "35px", padding: "5px" }} />
               </ListItemIcon>
