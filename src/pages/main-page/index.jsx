@@ -7,7 +7,12 @@ const MainPage = () => {
   return (
     <div>
       <NavBar />
-      <div>
+      <div
+        style={{
+          marginLeft: "90px",
+          marginTop: "90px",
+        }}
+      >
         <Tasks />
         <Calendar />
       </div>
