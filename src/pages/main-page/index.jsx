@@ -9,11 +9,12 @@ const MainPage = () => {
       <NavBar />
       <div
         style={{
-          marginLeft: "90px",
+          display: "flex",
+          marginLeft: window.innerWidth > 1000 ? "90px" : "0px",
           marginTop: "90px",
         }}
       >
-        <Tasks />
+        {window.innerWidth > 900 && <Tasks />}
         <Calendar />
       </div>
     </div>
