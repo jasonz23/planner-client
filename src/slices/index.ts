@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { reducers } from "./reducers";
+import { states } from "./states";
 const store = configureStore({
-    reducer: { reducers}
+    reducer: { reducers, states}
 })
 
 
