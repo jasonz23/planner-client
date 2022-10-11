@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { JsxElement } from "typescript";
 import { tasks } from "../../slices/tasks";
+import Task from "../task";
 import "./tasks.css";
 
 const Tasks = () => {
@@ -13,7 +14,7 @@ const Tasks = () => {
   };
 
   const getTasks = (): ReactNode | null => {
-    return <h1>COW</h1>;
+    return <Task />;
   };
 
   const getSubtitle = (): ReactNode | null => {
@@ -21,7 +22,7 @@ const Tasks = () => {
   };
 
   return (
-    <div>
+    <div style={{ flex: 1.5, marginRight: "10px" }}>
       <div>
         <h1 className="current-date-title">
           {currentMonth()} {currentDay()}
