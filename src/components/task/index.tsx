@@ -15,7 +15,7 @@ import "./task.css";
 const Task = () => {
   const [expanded, setExpanded] = useState(false);
   return (
-    <Accordion elevation={1} expanded={expanded} style={{ cursor: "" }}>
+    <Accordion expanded={expanded} style={{ cursor: "" }}>
       <AccordionSummary>
         <div className="task-root">
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -35,7 +35,7 @@ const Task = () => {
           </div>
 
           <div style={{ fontSize: "20px" }}>Do Homework</div>
-          <div style={{ marginLeft: "auto", marginRight: "20px" }}>
+          <div style={{ marginLeft: "auto", marginRight: "10px" }}>
             <Button
               onClick={() => {
                 setExpanded(!expanded);
@@ -50,13 +50,44 @@ const Task = () => {
         </div>
       </AccordionSummary>
       <AccordionDetails>
-        <Grid>
-          <TextField variant="outlined" label="Task Name" />
-          <TextField variant="outlined" label="Start Time" />
-          <TextField variant="outlined" label="End Time" />
-          <TextField variant="outlined" label="Task Description" />
-          <Button variant="contained">Save</Button>
-          <Button variant="contained">Clear</Button>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={12}>
+            <TextField variant="outlined" label="Task Name" fullWidth />
+          </Grid>
+
+          <Grid item xs={6} sm={6}>
+            <TextField variant="outlined" label="Start Time" fullWidth />
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <TextField variant="outlined" label="End Time" fullWidth />
+          </Grid>
+
+          <Grid item xs={12} sm={12}>
+            <TextField
+              variant="outlined"
+              label="Task Description"
+              multiline
+              fullWidth
+              rows={3}
+            />
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <Button
+              variant="contained"
+              onClick={() => {
+                setExpanded(false);
+              }}
+              style={{ marginRight: "20px" }}
+              fullWidth
+            >
+              Save
+            </Button>
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <Button variant="contained" fullWidth>
+              Clear
+            </Button>
+          </Grid>
         </Grid>
       </AccordionDetails>
     </Accordion>
